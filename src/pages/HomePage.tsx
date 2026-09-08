@@ -86,12 +86,12 @@ export default function HomePage() {
                 <p className="text-charcoal/60 font-sans font-light text-xs line-clamp-2 leading-relaxed mb-4">
                   {project.tagline}
                 </p>
-                <Link
+                {/* <Link
                   to={`/projects/${project.id}`}
                   className="text-espresso text-[9px] font-sans font-semibold tracking-[0.2em] uppercase inline-flex items-center gap-2 group/link hover:gap-3 transition-all"
                 >
                   View Case Study <span aria-hidden="true">→</span>
-                </Link>
+                </Link> */}
               </div>
             ))}
           </div>

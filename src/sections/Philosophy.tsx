@@ -61,7 +61,7 @@ export default function Philosophy() {
               className="font-serif text-ivory leading-[1.0]"
               style={{ fontSize: 'clamp(36px, 5.5vw, 78px)' }}
             >
-              Good Architecture
+              Good Architecture,
               <br />
               is Not Only Seen.
               <br />
