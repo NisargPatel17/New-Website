@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { label: 'WORK', href: '/projects' },
   { label: 'SERVICES', href: '/services' },
   { label: 'ABOUT', href: '/about' },
-  { label: 'INSIGHTS', href: '/insights' },
   { label: 'CONTACT', href: '/contact' },
 ];
 
@@ -99,7 +98,7 @@ export default function Footer() {
             © 2026 Visionary Architects · Founder &amp; CEO Pathik Chandarana. All Rights Reserved.
           </p>
           <p className="text-ivory/30 text-[9px] font-sans tracking-[0.12em]">
-            Where Vision Becomes Space.
+            Your vision becomes our mission.
           </p>
         </div>
       </div>

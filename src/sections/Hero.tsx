@@ -127,35 +127,29 @@ export default function Hero() {
         style={textShift}
       >
         {/* Label */}
-        <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.25em] uppercase mb-6 md:mb-8">
+        {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.25em] uppercase mb-6 md:mb-8">
           01 — Visionary Architects
-        </p>
+        </p> */}
 
         {/* Main headline */}
         <h1 className="font-serif text-ivory leading-[0.92] mb-6 md:mb-8">
           <span
             className="block"
-            style={{ fontSize: 'clamp(48px, 7.5vw, 118px)' }}
+            style={{ fontSize: 'clamp(44px, 7vw, 110px)' }}
           >
-            Where
+            Your Vision
           </span>
           <span
             className="block italic"
-            style={{ fontSize: 'clamp(48px, 7.5vw, 118px)' }}
+            style={{ fontSize: 'clamp(44px, 7vw, 110px)' }}
           >
-            Vision
+            Becomes Our
           </span>
           <span
             className="block"
-            style={{ fontSize: 'clamp(48px, 7.5vw, 118px)' }}
+            style={{ fontSize: 'clamp(44px, 7vw, 110px)' }}
           >
-            Becomes
-          </span>
-          <span
-            className="block"
-            style={{ fontSize: 'clamp(48px, 7.5vw, 118px)' }}
-          >
-            Space.
+            Mission.
           </span>
         </h1>
 

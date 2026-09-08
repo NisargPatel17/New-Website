@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { PROJECTS_DATA, Project } from '../data/projectsData';
+import AnimatedCounter from '../components/AnimatedCounter';
 
-const CATEGORIES = ['ALL', 'RESIDENTIAL', 'COMMERCIAL', 'INTERIORS', 'HEALTHCARE', 'INSTITUTIONAL', 'LANDSCAPE'] as const;
+const CATEGORIES = ['ALL', 'COMMERCIAL', 'INTERIORS', 'HEALTHCARE', 'INSTITUTIONAL', 'LANDSCAPE'] as const;
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
@@ -36,25 +37,27 @@ export default function ProjectsPage() {
             Built Work &amp; Spaces
           </h1>
           <p className="text-charcoal/70 font-sans font-light text-base md:text-lg max-w-2xl leading-relaxed tracking-wide">
-            Explore our multidisciplinary portfolio spanning residential architecture, commercial headquarters, healthcare institutes, bespoke interior design, and landscape master plans in Gujarat and nationwide.
+            Explore our multidisciplinary portfolio spanning commercial headquarters, healthcare institutes, bespoke interior design, institutional projects, and landscape master plans in Gujarat and nationwide.
           </p>
 
           {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-stone/40">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 pt-8 border-t border-stone/40">
             <div>
-              <p className="font-serif text-3xl md:text-4xl text-espresso">120,000+</p>
-              <p className="text-warm-gray text-[9px] font-sans tracking-[0.2em] uppercase mt-1">Built Square Feet</p>
+              <p className="font-serif text-3xl md:text-4xl text-espresso">
+                <AnimatedCounter end={300} start={1} suffix="+" />
+              </p>
+              <p className="text-warm-gray text-[9px] font-sans tracking-[0.2em] uppercase mt-1">Projects Completed</p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl text-espresso">45+</p>
-              <p className="text-warm-gray text-[9px] font-sans tracking-[0.2em] uppercase mt-1">Completed Projects</p>
-            </div>
-            <div>
-              <p className="font-serif text-3xl md:text-4xl text-espresso">7</p>
+              <p className="font-serif text-3xl md:text-4xl text-espresso">
+                <AnimatedCounter end={7} start={1} suffix="+" />
+              </p>
               <p className="text-warm-gray text-[9px] font-sans tracking-[0.2em] uppercase mt-1">Core Disciplines</p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl text-espresso">100%</p>
+              <p className="font-serif text-3xl md:text-4xl text-espresso">
+                <AnimatedCounter end={100} start={1} suffix="%" />
+              </p>
               <p className="text-warm-gray text-[9px] font-sans tracking-[0.2em] uppercase mt-1">Custom Architecture</p>
             </div>
           </div>

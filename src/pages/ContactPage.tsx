@@ -25,6 +25,7 @@ export default function ContactPage() {
     message: '',
   });
 
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = () => {
@@ -36,14 +37,40 @@ export default function ContactPage() {
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
       return;
     }
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch('https://formsubmit.co/ajax/visionaryarchitects.va@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone,
+          'Project Discipline': form.projectType || 'Not specified',
+          Location: form.location || 'Not specified',
+          Area: form.area || 'Not specified',
+          Budget: form.budget || 'Not specified',
+          Message: form.message,
+          _subject: `New Proposal Request: ${form.name}`,
+          _template: 'table',
+        }),
+      });
+    } catch (err) {
+      console.error('Form submission error:', err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -51,9 +78,9 @@ export default function ContactPage() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16">
         {/* Header */}
         <div className="mb-16 border-b border-white/10 pb-12">
-          <p className="text-amber-400 text-[10px] font-sans font-medium tracking-[0.25em] uppercase mb-4">
+          {/* <p className="text-amber-400 text-[10px] font-sans font-medium tracking-[0.25em] uppercase mb-4">
             09 — Project Consultation &amp; Proposal
-          </p>
+          </p> */}
           <h1
             className="font-serif text-ivory leading-none mb-6"
             style={{ fontSize: 'clamp(42px, 6vw, 88px)' }}
@@ -280,9 +307,10 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-600 text-ivory font-sans text-[10px] font-medium tracking-[0.2em] uppercase px-8 py-4 hover:bg-amber-500 transition-colors"
+                  disabled={submitting}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-600 text-ivory font-sans text-[10px] font-medium tracking-[0.2em] uppercase px-8 py-4 hover:bg-amber-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Proposal Request <span aria-hidden="true">→</span>
+                  {submitting ? 'Sending Proposal Request...' : 'Send Proposal Request'} <span aria-hidden="true">→</span>
                 </button>
               </form>
             )}

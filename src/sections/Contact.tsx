@@ -41,6 +41,7 @@ export default function Contact() {
     message: '',
   });
 
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<FormState>>({});
 
   const validate = () => {
@@ -52,14 +53,40 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
       return;
     }
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch('https://formsubmit.co/ajax/visionaryarchitects.va@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone,
+          'Project Type': form.projectType || 'Not specified',
+          Location: form.location || 'Not specified',
+          Area: form.area || 'Not specified',
+          Budget: form.budget || 'Not specified',
+          Message: form.message,
+          _subject: `New Architectural Enquiry: ${form.name}`,
+          _template: 'table',
+        }),
+      });
+    } catch (err) {
+      console.error('Form submission error:', err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   const fieldStatus = (key: keyof FormState): FieldStatus => {
@@ -102,9 +129,9 @@ export default function Contact() {
           <div
             className={`lg:col-span-5 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-8">
+            {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-8">
               09 — Contact
-            </p>
+            </p> */}
 
             <h2
               id="contact-heading"
@@ -350,9 +377,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 border border-ivory/40 text-ivory text-[10px] font-sans font-medium tracking-[0.2em] uppercase px-8 py-4 hover:bg-ivory hover:text-charcoal transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-ivory/50"
+                  disabled={submitting}
+                  className="inline-flex items-center gap-3 border border-ivory/40 text-ivory text-[10px] font-sans font-medium tracking-[0.2em] uppercase px-8 py-4 hover:bg-ivory hover:text-charcoal transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-ivory/50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Enquiry
+                  {submitting ? 'Sending...' : 'Send Enquiry'}
                   <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                 </button>
 

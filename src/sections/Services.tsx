@@ -77,9 +77,9 @@ export default function Services() {
         <div
           className={`mb-16 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
-          <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
+          {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
             03 — Services
-          </p>
+          </p> */}
           <h2
             id="services-heading"
             className="font-serif text-ivory leading-tight"
@@ -94,9 +94,8 @@ export default function Services() {
           {SERVICES.map((service, i) => (
             <div
               key={service.number}
-              className={`border-b border-white/10 transition-all duration-1000 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`border-b border-white/10 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <button
@@ -112,17 +111,15 @@ export default function Services() {
                     {service.number}
                   </span>
                   <h3
-                    className={`font-serif transition-all duration-300 flex-1 ${
-                      active === i ? 'text-ivory italic' : 'text-ivory/80 group-hover:text-ivory'
-                    }`}
+                    className={`font-serif transition-all duration-300 flex-1 ${active === i ? 'text-ivory italic' : 'text-ivory/80 group-hover:text-ivory'
+                      }`}
                     style={{ fontSize: 'clamp(22px, 3vw, 40px)' }}
                   >
                     {service.title}
                   </h3>
                   <span
-                    className={`text-warm-gray text-sm transition-transform duration-300 ${
-                      active === i ? 'rotate-45' : ''
-                    }`}
+                    className={`text-warm-gray text-sm transition-transform duration-300 ${active === i ? 'rotate-45' : ''
+                      }`}
                     aria-hidden="true"
                   >
                     +

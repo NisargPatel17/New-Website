@@ -1,14 +1,14 @@
 import { useState, useRef } from 'react';
 import { useReveal } from '../hooks/useReveal';
 
-const FILTERS = ['ALL', 'RESIDENTIAL', 'COMMERCIAL', 'INTERIORS', 'HEALTHCARE', 'INSTITUTIONAL', 'LANDSCAPE'] as const;
+const FILTERS = ['ALL', 'COMMERCIAL', 'INTERIORS', 'HEALTHCARE', 'INSTITUTIONAL', 'LANDSCAPE'] as const;
 type Filter = typeof FILTERS[number];
 
 const PROJECTS = [
   {
     id: 1,
     name: '[Project Name]',
-    category: 'RESIDENTIAL',
+    category: 'COMMERCIAL',
     location: 'Ahmedabad, Gujarat',
     year: '[YEAR]',
     image: 'https://images.unsplash.com/photo-1768223933860-6d62bc5b2ff3?w=1200&h=800&fit=crop&auto=format',
@@ -48,7 +48,7 @@ const PROJECTS = [
   {
     id: 5,
     name: '[Project Name]',
-    category: 'RESIDENTIAL',
+    category: 'INTERIORS',
     location: 'Gujarat',
     year: '[YEAR]',
     image: 'https://images.unsplash.com/photo-1750036015902-c6f5ebca924e?w=800&h=1100&fit=crop&auto=format',

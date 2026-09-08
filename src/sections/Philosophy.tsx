@@ -53,9 +53,9 @@ export default function Philosophy() {
           <div
             className={`lg:col-span-7 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-8">
+            {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-8">
               04 — Our Approach
-            </p>
+            </p> */}
             <h2
               id="philosophy-heading"
               className="font-serif text-ivory leading-[1.0]"

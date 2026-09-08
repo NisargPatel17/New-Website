@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import Hero from '../sections/Hero';
 import StudioIntro from '../sections/StudioIntro';
 import Services from '../sections/Services';
-import Materials from '../sections/Materials';
 import Philosophy from '../sections/Philosophy';
 import Process from '../sections/Process';
 import About from '../sections/About';
 import Instagram from '../sections/Instagram';
-import Insights from '../sections/Insights';
 import Contact from '../sections/Contact';
 import { PROJECTS_DATA } from '../data/projectsData';
 import { useReveal } from '../hooks/useReveal';
@@ -33,14 +31,13 @@ export default function HomePage() {
       >
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16">
           <div
-            className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 transition-all duration-1000 ${
-              workVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 transition-all duration-1000 ${workVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
           >
             <div>
-              <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
+              {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
                 02 — Selected Portfolio
-              </p>
+              </p> */}
               <h2
                 id="featured-work-heading"
                 className="font-serif text-charcoal leading-tight"
@@ -64,9 +61,8 @@ export default function HomePage() {
             {PROJECTS_DATA.map((project, i) => (
               <div
                 key={project.id}
-                className={`group transition-all duration-700 ${
-                  workVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                className={`group transition-all duration-700 ${workVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
                 <Link to={`/projects/${project.id}`} className="block overflow-hidden bg-stone aspect-[4/3] mb-5 relative">
@@ -105,25 +101,19 @@ export default function HomePage() {
       {/* 03 — Services & Disciplines */}
       <Services />
 
-      {/* 04 — Materiality Studio */}
-      <Materials />
-
-      {/* 05 — Architectural Philosophy */}
+      {/* 04 — Architectural Philosophy */}
       <Philosophy />
 
-      {/* 06 — Design Process */}
+      {/* 05 — Design Process */}
       <Process />
 
-      {/* 07 — Founder Spotlight & About */}
+      {/* 06 — Founder Spotlight & About */}
       <About />
 
-      {/* 08 — Client Video Reels & Instagram */}
+      {/* 07 — Client Video Reels & Instagram */}
       <Instagram />
 
-      {/* 09 — Architectural Insights */}
-      <Insights />
-
-      {/* 10 — Contact & Consultation */}
+      {/* 08 — Contact & Consultation */}
       <Contact />
     </div>
   );

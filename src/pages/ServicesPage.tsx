@@ -32,9 +32,9 @@ export default function ServicesPage() {
             >
               {/* Left Column: Number + Title + PDF Tagline */}
               <div className="lg:col-span-4 space-y-4">
-                <span className="text-amber-700/80 font-sans text-xs tracking-[0.2em] font-semibold uppercase block">
+                {/* <span className="text-amber-700/80 font-sans text-xs tracking-[0.2em] font-semibold uppercase block">
                   Discipline — {service.number}
-                </span>
+                </span> */}
                 <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-tight">
                   {service.title}
                 </h2>
@@ -105,7 +105,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Interactive Estimator */}
-        <CostCalculator />
+        {/* <CostCalculator /> */}
 
         {/* Bottom Callout */}
         <div className="mt-20 text-center bg-charcoal text-ivory p-12 md:p-16 border border-white/10">

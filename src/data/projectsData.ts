@@ -10,7 +10,7 @@ export interface BlueprintHotspot {
 export interface Project {
   id: string;
   title: string;
-  category: 'RESIDENTIAL' | 'COMMERCIAL' | 'INTERIORS' | 'HEALTHCARE' | 'INSTITUTIONAL' | 'LANDSCAPE' | '3D_VISUALIZATION';
+  category: 'COMMERCIAL' | 'INTERIORS' | 'HEALTHCARE' | 'INSTITUTIONAL' | 'LANDSCAPE' | '3D_VISUALIZATION';
   categoryLabel: string;
   location: string;
   year: string;
@@ -32,8 +32,8 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: 'aspen-ridge-pavilion',
     title: 'Aspen Ridge Pavilion & Residence',
-    category: 'RESIDENTIAL',
-    categoryLabel: 'Residential Design',
+    category: 'INTERIORS',
+    categoryLabel: 'Bespoke Interiors',
     location: 'Science City Road, Ahmedabad',
     year: '2025',
     area: '8,500 sq ft',

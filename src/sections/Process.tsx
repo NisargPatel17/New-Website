@@ -51,9 +51,9 @@ export default function Process() {
         <div
           className={`mb-16 md:mb-20 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
-          <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
+          {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
             05 — Process
-          </p>
+          </p> */}
           <h2
             id="process-heading"
             className="font-serif text-charcoal leading-tight"
@@ -77,11 +77,10 @@ export default function Process() {
                   aria-pressed={activeStep === i}
                 >
                   <div
-                    className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
-                      i <= activeStep
-                        ? 'bg-espresso border-espresso'
-                        : 'bg-ivory border-stone group-hover:border-warm-gray'
-                    }`}
+                    className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${i <= activeStep
+                      ? 'bg-espresso border-espresso'
+                      : 'bg-ivory border-stone group-hover:border-warm-gray'
+                      }`}
                   />
                 </button>
               ))}
@@ -93,25 +92,22 @@ export default function Process() {
             {STEPS.map((step, i) => (
               <div
                 key={step.number}
-                className={`transition-all duration-500 cursor-pointer ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                }`}
+                className={`transition-all duration-500 cursor-pointer ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                  }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
                 onClick={() => setActiveStep(i)}
               >
                 <p className="text-warm-gray/50 text-[10px] font-sans tracking-[0.15em] mb-3">{step.number}</p>
                 <h3
-                  className={`font-serif mb-3 transition-colors duration-300 ${
-                    activeStep === i ? 'text-espresso italic' : 'text-charcoal/80'
-                  }`}
+                  className={`font-serif mb-3 transition-colors duration-300 ${activeStep === i ? 'text-espresso italic' : 'text-charcoal/80'
+                    }`}
                   style={{ fontSize: 'clamp(20px, 1.8vw, 28px)' }}
                 >
                   {step.title}
                 </h3>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ${
-                    activeStep === i ? 'max-h-40 opacity-100' : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
-                  }`}
+                  className={`overflow-hidden transition-all duration-500 ${activeStep === i ? 'max-h-40 opacity-100' : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
+                    }`}
                 >
                   <p className="text-charcoal/50 font-sans font-light text-xs leading-relaxed tracking-wide">
                     {step.description}
@@ -127,9 +123,8 @@ export default function Process() {
           {STEPS.map((step, i) => (
             <div
               key={step.number}
-              className={`py-8 transition-all duration-700 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`py-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex gap-6 items-start">
@@ -153,7 +148,15 @@ export default function Process() {
         <div
           className={`mt-20 pt-12 border-t border-stone transition-all duration-1000 delay-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
         >
-          <blockquote className="font-serif text-charcoal/40 italic text-center" style={{ fontSize: 'clamp(20px, 2.5vw, 32px)' }}>
+          {/* <blockquote className="font-serif text-charcoal/40 italic text-center" style={{ fontSize: 'clamp(20px, 2.5vw, 32px)' }}>
+            "Every great project begins with a great conversation."
+          </blockquote> */}
+
+
+          <blockquote
+            className="font-serif font-bold text-charcoal/40 italic text-center"
+            style={{ fontSize: 'clamp(20px, 2.5vw, 32px)' }}
+          >
             "Every great project begins with a great conversation."
           </blockquote>
         </div>

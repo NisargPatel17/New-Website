@@ -71,7 +71,7 @@ export default function Instagram() {
       videoRef.current.pause();
       setIsPlaying(false);
     } else {
-      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => { });
     }
   };
 
@@ -85,14 +85,13 @@ export default function Instagram() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16">
         {/* Section Header */}
         <div
-          className={`mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 transition-all duration-1000 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
+          className={`mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
         >
           <div>
-            <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
+            {/* <p className="text-warm-gray text-[10px] font-sans font-medium tracking-[0.22em] uppercase mb-4">
               07 — Client Stories & Instagram
-            </p>
+            </p> */}
             <h2
               id="instagram-heading"
               className="font-serif text-charcoal leading-tight"
@@ -117,9 +116,8 @@ export default function Instagram() {
 
         {/* Featured Video Testimonial Reel Spotlight */}
         <div
-          className={`mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-stone/40 border border-stone p-6 md:p-10 lg:p-12 transition-all duration-1000 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-stone/40 border border-stone p-6 md:p-10 lg:p-12 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
           {/* Left Column: Instagram Video Reel Player */}
           <div className="lg:col-span-5 flex justify-center">
@@ -240,9 +238,8 @@ export default function Instagram() {
                 href="https://www.instagram.com/visionaryarchitects_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative overflow-hidden aspect-square bg-stone group transition-all duration-1000 ${
-                  visible ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`relative overflow-hidden aspect-square bg-stone group transition-all duration-1000 ${visible ? 'opacity-100' : 'opacity-0'
+                  }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
                 aria-label={`Instagram post: ${img.alt}`}
               >
